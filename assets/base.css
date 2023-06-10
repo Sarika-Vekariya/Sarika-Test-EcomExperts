@@ -3365,4 +3365,4 @@ details-disclosure > details {
     --sparkle: url('./sparkle.gif');
   }
 }
-body{background: #fff;color:#000;}
+body{border:0;color:#000;}

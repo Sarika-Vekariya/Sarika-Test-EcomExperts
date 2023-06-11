@@ -100,7 +100,7 @@ if (!customElements.get('product-form')) {
               .catch(function(error) {
                 console.log(error);
               })
-            });
+            
           })
           .catch((e) => {
             console.error(e);

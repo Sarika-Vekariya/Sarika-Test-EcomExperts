@@ -104,36 +104,21 @@ class CartItems extends HTMLElement {
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
 
-        const url = '/cart.js';
-        fetch(url)
-        .then((resp) => resp.json())
-        .then(function(data) {
-          var c_bundle_item = document.querySelector('cart-remove-button[data-id="45464433525046"]');
-          var cart_items = data.items;
-          cart_items.forEach(function(e){
-            var item_variantid = e.variant_id;
-            var black_medium = 45471193006390;
-            if(c_bundle_item != null){
-              console.log('if');
-              console.log(item_variantid,black_medium);
-              if(item_variantid==black_medium){
-                var bundle_index = document.querySelector('cart-remove-button[data-id="45464433525046"]').dataset.index;
-                const cartItems = document.querySelector('cart-items') || document.querySelector('cart-drawer-items');
-                setTimeout(function(e){ 
-                  cartItems.updateQuantity(bundle_index, 0);
-                },1000);                
-              }
-            }
-          });
-        })
-        .catch(function(error) {
-          console.log(error);
-        })
-
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
           this.updateLiveRegions(line, parsedState.errors);
           return;
+        }
+
+        var itemindex = document.querySelector('cart-remove-button[data-index="'+line+'"]').dataset.id;        
+        var bundle_pro = document.querySelector('cart-remove-button[data-id="45464433525046"] a');
+        console.log(itemindex,bundle_pro);
+        if(bundle_pro != null){
+          if(itemindex==45471193006390){
+            var bundleremove = document.querySelector('cart-remove-button[data-id="45464433525046"]').dataset.index;
+            console.log('ds',bundleremove);          
+            document.querySelector('cart-remove-button[data-id="45464433525046"] a').click();
+          }
         }
 
         this.classList.toggle('is-empty', parsedState.item_count === 0);

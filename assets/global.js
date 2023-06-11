@@ -1038,9 +1038,9 @@ class VariantSelects extends HTMLElement {
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
-        const bundle_pro = document.getElementById(`bundle--${this.dataset.section}`);
+        const bundle_pro = document.getElementById(`uniq-${this.dataset.section}`);
         const bundle_prosource = html.getElementById(
-          `bundle--${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+          `uniq-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         console.log(bundle_pro,bundle_prosource);
         if (bundle_pro && bundle_prosource) bundle_pro.innerHTML = bundle_prosource.innerHTML;

@@ -112,12 +112,12 @@ class CartItems extends HTMLElement {
 
         var itemindex = document.querySelector('cart-remove-button[data-index="'+line+'"]').dataset.id;        
         var bundle_pro = document.querySelector('cart-remove-button[data-id="45464433525046"] a');
-        console.log(itemindex,bundle_pro);
         if(bundle_pro != null){
           if(itemindex==45471193006390){
             var bundleremove = document.querySelector('cart-remove-button[data-id="45464433525046"]').dataset.index;
-            console.log('ds',bundleremove);          
-            document.querySelector('cart-remove-button[data-id="45464433525046"] a').click();
+            setTimeout(function(e){
+              document.querySelector('cart-remove-button[data-id="45464433525046"] a').click();
+            },500);               
           }
         }
 

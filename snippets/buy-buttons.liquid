@@ -76,7 +76,7 @@
               {%- assign size_variant = true -%}
             {%- endif -%}
           {%- endfor -%}
-          {%- if product.variant.size > 1 and size_variant == true -%}
+          {%- if product.variants.size > 1 and size_variant == true -%}
             {%- assign diable_btn = true -%}
           {%- endif -%}
           <button

@@ -940,6 +940,11 @@ class VariantSelects extends HTMLElement {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
     document.querySelector('.product-form__submit').classList.remove('cartdisable');
+    var sizedropdown = document.querySelector('.sizedropdown');
+    if(sizedropdown){
+    var checkval = document.querySelector('.sizedropdown input[type="radio"]:checked').value;
+      document.querySelector('.size_lebel').innerHTML = checkval;
+    }
   }
 
   updateShareUrl() {
@@ -1124,8 +1129,6 @@ class VariantRadios extends VariantSelects {
     this.options = fieldsets.map((fieldset) => {
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
-    var checkval = document.querySelectorAll('.sizedropdown input[type="radio"]').checked.value;
-    console.log(checkval);
   }
 }
 

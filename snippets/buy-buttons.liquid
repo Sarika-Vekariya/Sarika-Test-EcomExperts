@@ -70,7 +70,7 @@
             endif
           -%}
            {%- assign size_variant = false -%}
-          {%- for option in product.options -%}
+          {%- for option in product.options_with_values -%}
             {%- assign option_name = option.name | handle -%}
             {%- if option_name contains 'size' -%}
               {%- assign size_variant = true -%}

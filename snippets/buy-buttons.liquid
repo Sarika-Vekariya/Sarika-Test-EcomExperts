@@ -54,12 +54,12 @@
           disabled
           class="product-variant-id"
         >
-        {%- assign black_medium_var = 45471193006390 -%}
+        {%- assign black_medium_var = black_medium -%}
         {%- assign selected_var = product.selected_or_first_available_variant.id -%}
         {%- assign single_item = 0 -%}
         {%- for item in cart.items -%}
           {%- assign item_id = item.id -%}
-          {%- if item_id == 45464433525046 -%}
+          {%- if item_id == bundle_pro -%}
             {%- assign single_item = single_item | plus:1 -%}
           {%- endif -%}           
         {%- endfor -%}          
@@ -67,8 +67,7 @@
         {%- if black_medium_var == selected_var -%}
        {%- if single_item == 0 -%}
         <input type="hidden" name="items[1][quantity]" value="1">
-        <input type="hidden" name="items[1][id]" value="45464433525046">   
-        <input type="hidden" name="properties[Bundle]" value="bundle">
+        <input type="hidden" name="items[1][id]" value="bundle_pro">
         {%- endif -%}  
         {%- endif -%}
         </div>

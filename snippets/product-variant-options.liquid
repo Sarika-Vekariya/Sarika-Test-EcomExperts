@@ -22,7 +22,6 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-
 {%- for value in option.values -%}
   {%- liquid
     assign option_disabled = true
@@ -44,17 +43,20 @@
       endcase
     endfor
   -%}
-
   {%- if block.settings.picker_type == 'button' -%}
+  {%- assign opiotn_name = option.name | handle -%}
+  <li>
     <input
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
+      {%- unless opiotn_name == 'size' -%}
       {% if option.selected_value == value %}
         checked
       {% endif %}
+      {%- endunless -%}
       {% if option_disabled %}
         class="disabled"
       {% endif %}
@@ -63,6 +65,7 @@
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
+  </li>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"

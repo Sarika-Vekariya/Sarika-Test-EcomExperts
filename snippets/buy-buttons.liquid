@@ -54,9 +54,11 @@
           disabled
           class="product-variant-id"
         >
+        cart test------------
         {%- for item in cart.items -%}
         cart - {{item.id}}
         {%- endfor -%}
+        --------------
         <div class="bundle_pro_cls" id="bundle-{{ section.id }}">          
          pro- {{product.selected_or_first_available_variant.id}}-{{bundleitemcount}}
           {%- if bundleitemcount == 0 -%}

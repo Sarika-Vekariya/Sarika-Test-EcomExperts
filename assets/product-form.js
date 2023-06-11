@@ -101,6 +101,12 @@ if (!customElements.get('product-form')) {
                 console.log(error);
               })*/
               console.log(response);
+              var response_id = response.variant_id;
+              if(response_id==45471193006390){
+                console.log('if');
+              }else{
+                console.log('else');
+              }
             
           })
           .catch((e) => {

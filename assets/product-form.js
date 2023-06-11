@@ -113,7 +113,7 @@ if (!customElements.get('product-form')) {
 }
 var size_dropdownbtn = document.querySelector('.size_dropdownbtn');
 if(size_dropdownbtn != null){
-  size_dropdownbtn.addEventListener('click', function(){
+  size_dropdownbtn.addEventListener('click', function(e){
     e.preventDefault();
     document.querySelector('.sizedropdown').classList.toggle('active');
   });

@@ -57,6 +57,7 @@
         <div class="bundle_pro_cls" id="bundle-{{ section.id }}">
           {%- assign bundleitemcount = 0 -%}
           {%- for item in cart.items -%}
+          {{item.id}}
             {%- assign item_variantid = item.variant.id -%}
             cart-{{item_variantid}}
             {%- if item_variantid == bundle_pro -%}

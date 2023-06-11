@@ -119,7 +119,9 @@ class CartItems extends HTMLElement {
               if(item_variantid==black_medium){
                 var bundle_index = document.querySelector('cart-remove-button[data-id="45464433525046"]').dataset.index;
                 const cartItems = document.querySelector('cart-items') || document.querySelector('cart-drawer-items');
-                cartItems.updateQuantity(bundle_index, 0);
+                setTimeout(function(e){ 
+                  cartItems.updateQuantity(bundle_index, 0);
+                },1000);                
               }
             }
           });

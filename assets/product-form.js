@@ -82,6 +82,25 @@ if (!customElements.get('product-form')) {
             } else {
               this.cart.renderContents(response);
             }
+            const url = '/cart.js';
+              fetch(url)
+              .then((resp) => resp.json())
+              .then(function(data) {
+                var cart_items = data.items;
+                console.log(cart_items);
+                cart_items.forEach(function(e){
+                  var item_var_id = e.variant_id;
+                  if(item_var_id == 45471193006390){
+                    console.log('if')
+                  }else{
+                    console.log('else');
+                  }
+                });
+              })
+              .catch(function(error) {
+                console.log(error);
+              })
+            });
           })
           .catch((e) => {
             console.error(e);

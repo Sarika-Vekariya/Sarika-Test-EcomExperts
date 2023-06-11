@@ -104,6 +104,16 @@ class CartItems extends HTMLElement {
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
 
+        const url = '/cart.js';
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+          console.log(data);          
+        })
+        .catch(function(error) {
+          console.log(error);
+        })
+
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
           this.updateLiveRegions(line, parsedState.errors);

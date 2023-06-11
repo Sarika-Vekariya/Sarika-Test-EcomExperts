@@ -1042,7 +1042,6 @@ class VariantSelects extends HTMLElement {
         const bundle_prosource = html.getElementById(
           `uniq-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
-        console.log(bundle_pro,bundle_prosource);
         if (bundle_pro && bundle_prosource) bundle_pro.innerHTML = bundle_prosource.innerHTML;
         if (source && destination) destination.innerHTML = source.innerHTML;
         if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;

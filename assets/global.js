@@ -945,6 +945,7 @@ class VariantSelects extends HTMLElement {
     var checkval = document.querySelector('.sizedropdown input[type="radio"]:checked').value;
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
+    document.querySelector('.sizedropdown').classList.remove('active');
   }
 
   updateShareUrl() {
@@ -1037,7 +1038,11 @@ class VariantSelects extends HTMLElement {
           `Inventory-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         const inventoryDestination = document.getElementById(`Inventory-${this.dataset.section}`);
-
+        const bundle_pro = document.getElementById(`bundle--${this.dataset.section}`);
+        const bundle_prosource = html.getElementById(
+          `bundle--${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        if (bundle_pro && bundle_prosource) bundle_pro.innerHTML = bundle_prosource.innerHTML;
         if (source && destination) destination.innerHTML = source.innerHTML;
         if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;
         if (skuSource && skuDestination) {

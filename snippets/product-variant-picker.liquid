@@ -24,7 +24,7 @@
       {%- for option in product.options_with_values -%}
         {%- assign option_name = option.name | handle -%}
         {%- if option_name contains 'size' -%}
-        <fieldset class="js product-form__input product-form__size">
+        <fieldset class="js product-form__size">
           {%- comment -%}<legend class="form__label">{{ option.name }}</legend>{%- endcomment -%}
           <a href="#" class="size_dropdownbtn">{{option.name}}</a>
           <ul class="list--inline sizedropdown">

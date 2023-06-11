@@ -69,11 +69,21 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+           {%- assign size_variant = false -%}
+          {%- for option in product.options -%}
+            {%- assign option_name = option.name | handle -%}
+            {%- if option_name contains 'size' -%}
+              {%- assign size_variant = true -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if product.variant.size > 1 and size_variant == true -%}
+            {%- assign diable_btn = true -%}
+          {%- endif -%}
           <button
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} {% if diable_btn %}cartdisable{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}

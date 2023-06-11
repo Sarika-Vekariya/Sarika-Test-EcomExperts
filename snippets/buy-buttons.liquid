@@ -54,16 +54,10 @@
           disabled
           class="product-variant-id"
         >
-        <div class="bundle_pro_cls" id="bundle-{{ section.id }}">
-          {%- assign bundleitemcount = 0 -%}
-          {%- for item in cart.items -%}
-          {{item.id}}
-            {%- assign item_variantid = item.variant.id -%}
-            cart-{{item_variantid}}
-            {%- if item_variantid == bundle_pro -%}
-              {%- assign bundleitemcount = bundleitemcount | plus:1 -%}
-            {%- endif -%}
-          {%- endfor -%} 
+        {%- for item in cart.items -%}
+        cart - {{item.id}}
+        {%- endfor -%}
+        <div class="bundle_pro_cls" id="bundle-{{ section.id }}">          
          pro- {{product.selected_or_first_available_variant.id}}-{{bundleitemcount}}
           {%- if bundleitemcount == 0 -%}
             {%- if product.selected_or_first_available_variant.id == black_medium -%}

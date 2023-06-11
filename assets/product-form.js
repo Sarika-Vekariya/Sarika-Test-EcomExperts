@@ -122,3 +122,7 @@ if(size_dropdownbtn != null){
     document.querySelector('.sizedropdown').classList.toggle('active');
   });
 }
+if(window.location.href.indexOf("dark-winter-jacket") > -1) 
+{
+  window.location = '/';
+}

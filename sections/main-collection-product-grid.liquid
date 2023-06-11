@@ -155,6 +155,7 @@
               "
             >
               {%- for product in collection.products -%}
+              {%- unless product.id == 8414204756278 -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
@@ -178,6 +179,7 @@
                     section_id: section.id
                   %}
                 </li>
+              {% endunless %}  
               {%- endfor -%}
             </ul>
 

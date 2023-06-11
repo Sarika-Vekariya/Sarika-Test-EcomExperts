@@ -270,6 +270,7 @@
 
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
                           <div class="cart-item__quantity-wrapper">
+                            {% unless item.variant.id == 45464433525046 %}
                             <quantity-input class="quantity cart-quantity">
                               <button class="quantity__button no-js-hidden" name="minus" type="button">
                                 <span class="visually-hidden">
@@ -302,7 +303,7 @@
                                 {% render 'icon-plus' %}
                               </button>
                             </quantity-input>
-
+                            {% endunless %}
                             <cart-remove-button
                               id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
                               data-index="{{ item.index | plus: 1 }}"  data-id="{{item.variant.id}}"

@@ -1,3 +1,4 @@
+{%- unless product.id == 8414204756278 -%}
 <section
   id="MainProduct-{{ section.id }}"
   class="page-width section-{{ section.id }}-padding"
@@ -569,7 +570,7 @@
     }
   </script>
 </section>
-
+{% endunless %}
 {% schema %}
 {
   "name": "t:sections.main-product.name",

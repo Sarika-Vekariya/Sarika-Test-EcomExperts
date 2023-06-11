@@ -938,7 +938,8 @@ class VariantSelects extends HTMLElement {
 
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
-    window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+    window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);'
+    document.querySelector('.product-form__submit').classList.remove('cartdisable');
   }
 
   updateShareUrl() {
@@ -1123,6 +1124,7 @@ class VariantRadios extends VariantSelects {
     this.options = fieldsets.map((fieldset) => {
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
+    console.log(this.options);
   }
 }
 

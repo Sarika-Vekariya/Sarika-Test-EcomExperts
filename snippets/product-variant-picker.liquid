@@ -26,7 +26,9 @@
         {%- if option_name contains 'size' -%}
         <fieldset class="js product-form__size">
           {%- comment -%}<legend class="form__label">{{ option.name }}</legend>{%- endcomment -%}
-          <a href="#" class="size_dropdownbtn">{{option.name}}</a>
+          <a href="#" class="size_dropdownbtn">{{option.name}}
+          <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0.5L6 6L11.5 0.500002" stroke="black" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
           <ul class="list--inline sizedropdown">
           {% render 'product-variant-options', product: product, option: option, block: block %}
           </ul>

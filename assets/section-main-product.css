@@ -1597,7 +1597,7 @@ a.product__text {
 .list--inline{margin:0;padding:0;}
 .list--inline li{list-style: none;display: inline-block;}
 .product-form__size{position:relative;border: 0;padding: 0;}
-.size_dropdownbtn{display:flex;padding:6px 15px;border: 1px solid #000;align-items:center;text-decoration:none;color: inherit;text-align: left;}
+.size_dropdownbtn{display:flex;padding:6px 15px;border: 1px solid #000;align-items:center;text-decoration:none;color: inherit;text-align: left;justify-content: space-between;}
 .sizedropdown{position: absolute;left: 0;right: 0;top: 100%;background: #fff;z-index: 11;border: 1px solid #000;margin-top: -1px;padding: 10px 0px;display: none;}
 .sizedropdown li{display:block;}
 .sizedropdown li input[type="radio"]:checked+label{font-weight:bold;}

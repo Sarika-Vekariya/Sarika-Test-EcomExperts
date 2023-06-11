@@ -82,7 +82,7 @@ if (!customElements.get('product-form')) {
             } else {
               this.cart.renderContents(response);
             }
-            const url = '/cart.js';
+            /*const url = '/cart.js';
               fetch(url)
               .then((resp) => resp.json())
               .then(function(data) {
@@ -99,7 +99,8 @@ if (!customElements.get('product-form')) {
               })
               .catch(function(error) {
                 console.log(error);
-              })
+              })*/
+              console.log(response);
             
           })
           .catch((e) => {

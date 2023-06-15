@@ -1055,7 +1055,7 @@ class VariantSelects extends HTMLElement {
           }else{
             document.querySelector('.product-form__submit').classList.remove('disable_cart');
           }
-        },1000);
+        },500);
         
 
         if (source && destination) destination.innerHTML = source.innerHTML;

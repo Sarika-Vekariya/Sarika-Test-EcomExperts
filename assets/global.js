@@ -946,8 +946,8 @@ class VariantSelects extends HTMLElement {
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
     document.querySelector('.sizedropdown').classList.remove('active');
-    var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
-    console.log(unselected_dataval);
+    //var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
+    //console.log(unselected_dataval);
   }
 
   updateShareUrl() {

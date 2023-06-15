@@ -1051,13 +1051,13 @@ class VariantSelects extends HTMLElement {
         var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
         console.log('Unselected Data value',unselected_dataval);
         setTimeout(function(e){
-          if(unselected_dataval==true){
-            document.querySelector('.product-form__submit').classList.add('disable_cart');
-            console.log('add Disable Button');
-          }else{
-            document.querySelector('.product-form__submit').classList.remove('disable_cart');
-            console.log('Remove Disable Button');
-          }
+        if(unselected_dataval=='true'){
+          document.querySelector('.product-form__submit').classList.add('disable_cart');
+          console.log('add Disable Button');
+        }else{
+          document.querySelector('.product-form__submit').classList.remove('disable_cart');
+          console.log('Remove Disable Button');
+        }
         },1000);
         
 

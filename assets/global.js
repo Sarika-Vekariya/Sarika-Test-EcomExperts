@@ -947,13 +947,16 @@ class VariantSelects extends HTMLElement {
     }
     document.querySelector('.sizedropdown').classList.remove('active');
     var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
+    console.log(unselected_dataval);
     setTimeout(function(e){
       if(unselected_dataval==true){
         document.querySelector('.product-form__submit').classList.add('disable_cart');
+        console.log('if');
       }else{
         document.querySelector('.product-form__submit').classList.remove('disable_cart');
+        console.log('else');
       }
-    },500);
+    },1000);
   }
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);

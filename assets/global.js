@@ -946,7 +946,7 @@ class VariantSelects extends HTMLElement {
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
     document.querySelector('.sizedropdown').classList.remove('active');
-    var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
+    var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
     console.log(unselected_dataval);
     setTimeout(function(e){
       if(unselected_dataval==true){

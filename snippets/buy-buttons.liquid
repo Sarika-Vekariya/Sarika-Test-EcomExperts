@@ -71,6 +71,15 @@
         {%- endif -%}  
         {%- endif -%}
         </div>
+        {%- assign dataval = false -%}
+        <div id="unselected-{{ section.id }}">                       
+            {%- assign variant_title = product.selected_or_first_available_variant.title | handle -%}              
+            {%- if variant_title contains 'unselected' -%}
+              {%- assign dataval = true -%}
+            {%- endif -%}
+          {% endfor %}  
+          <div class="unslected_var" data-value="{{ dataval }}"></div>  
+        </div>
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}       
@@ -93,16 +102,7 @@
           {%- endfor -%}
           {%- if product.variants.size > 1 and size_variant == true -%}
             {%- assign diable_btn = true -%}
-          {%- endif -%}
-          {%- assign dataval = false -%}
-          <div id="unselected-{{ section.id }}">                       
-              {%- assign variant_title = product.selected_or_first_available_variant.title | handle -%}              
-              {%- if variant_title contains 'unselected' -%}
-                {%- assign dataval = true -%}
-              {%- endif -%}
-            {% endfor %}  
-            <div class="unslected_var" data-value="{{ dataval }}"></div>  
-          </div>
+          {%- endif -%}          
           <button
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"

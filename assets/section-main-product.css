@@ -1606,3 +1606,4 @@ a.product__text {
 .sizedropdown li input[type="radio"]+label{cursor: pointer;padding: 4px 10px;}
 .sizedropdown.active{display: block;}
 .size_dropdownbtn svg{width: 10px;}
+.disable_cart{pointer-events: none;opacity: 0.4;}

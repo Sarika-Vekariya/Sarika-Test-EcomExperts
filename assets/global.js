@@ -947,14 +947,14 @@ class VariantSelects extends HTMLElement {
     }
     document.querySelector('.sizedropdown').classList.remove('active');
     var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
-    console.log(unselected_dataval);
+    console.log('Unselected Data value',unselected_dataval);
     setTimeout(function(e){
       if(unselected_dataval==true){
         document.querySelector('.product-form__submit').classList.add('disable_cart');
-        console.log('if');
+        console.log('add Disable Button');
       }else{
         document.querySelector('.product-form__submit').classList.remove('disable_cart');
-        console.log('else');
+        console.log('Remove Disable Button');
       }
     },1000);
   }

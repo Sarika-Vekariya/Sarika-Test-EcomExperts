@@ -65,11 +65,19 @@
         {%- endfor -%}          
         <div id="uniq-{{ section.id }}" class="bundle_cls">       
         {%- if black_medium_var == selected_var -%}
-       {%- if single_item == 0 -%}
-        <input type="hidden" name="items[1][quantity]" value="1">
-        <input type="hidden" name="items[1][id]" value="45464433525046">
-        {%- endif -%}  
+          {%- if single_item == 0 -%}
+            <input type="hidden" name="items[1][quantity]" value="1">
+            <input type="hidden" name="items[1][id]" value="45464433525046">
+          {%- endif -%}  
         {%- endif -%}
+        </div>
+        {%- assign current_unselected = false -%}
+        <div id="unselected-{{ section.id }}">
+        {%- assign handlevariant = product.selected_or_first_available_variant.title -%}
+        {%- if handlevariant contains 'unselected' -%}
+          {%- assign current_unselected = true -%}
+        {%- endif -%}
+        <div class="unslected_var" data-value="{{current_unselected}}"></div>
         </div>
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
@@ -98,7 +106,7 @@
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} {% if current_unselected %}disable_cart{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}

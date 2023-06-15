@@ -1049,9 +1049,9 @@ class VariantSelects extends HTMLElement {
         );
         if (bundle_pro && bundle_prosource) bundle_pro.innerHTML = bundle_prosource.innerHTML;
 
-        const unselected_pro = document.getElementById(`uniq-${this.dataset.section}`);
+        const unselected_pro = document.getElementById(`unselected-${this.dataset.section}`);
         const unselected_pro_prosource = html.getElementById(
-          `uniq-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+          `unselected-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         if (unselected_pro && unselected_pro_prosource) unselected_pro.innerHTML = unselected_pro_prosource.innerHTML;
 

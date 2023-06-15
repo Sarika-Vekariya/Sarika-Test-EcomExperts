@@ -952,7 +952,7 @@ class VariantSelects extends HTMLElement {
     }else{
       document.querySelector('.product-form__submit').classList.remove('disable_cart');
     }
-
+  }
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);
     if (!shareButton || !shareButton.updateUrl) return;

@@ -73,10 +73,12 @@
         </div>
         {%- assign current_unselected = false -%}
         <div id="unselected-{{ section.id }}">
-        {%- assign handlevariant = product.selected_or_first_available_variant.title -%}
-        {%- if handlevariant contains 'unselected' -%}
-          {%- assign current_unselected = true -%}
-        {%- endif -%}
+        {%- for variant in product.variants -%}
+          {%- assign variant_title = variant.title | handle -%}          
+          {%- if product.selected_or_first_available_variant.title contains 'Unselected' -%}            
+            {%- assign current_unselected = true -%}
+          {%- endif -%}
+        {% endfor %} 
         <div class="unslected_var" data-value="{{current_unselected}}"></div>
         </div>
         {%- if gift_card_recipient_feature_active -%}

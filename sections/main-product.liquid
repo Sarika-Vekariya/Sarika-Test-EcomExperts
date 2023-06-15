@@ -572,6 +572,13 @@
 </section>
 {% endunless %}
 <script>
+setTimeout(function(e){
+  const winput = document.querySelector('.pro-size-input input[value="Unselected"]');
+  const ssclickEvent = new MouseEvent('click', {button: 0, which: 1});
+  winput.addEventListener('change', () => {
+  })
+  winput.dispatchEvent(ssclickEvent);
+},1000);
 if(window.location.href.indexOf("dark-winter-jacket") > -1) 
 {
   window.location = '/';

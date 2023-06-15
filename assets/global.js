@@ -939,7 +939,7 @@ class VariantSelects extends HTMLElement {
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
-    document.querySelector('.product-form__submit').classList.remove('cartdisable');
+    //document.querySelector('.product-form__submit').classList.remove('cartdisable');
     var sizedropdown = document.querySelector('.sizedropdown');
     if(sizedropdown){
     var checkval = document.querySelector('.sizedropdown input[type="radio"]:checked').value;

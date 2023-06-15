@@ -52,11 +52,9 @@
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
-      {%- unless opiotn_name == 'size' -%}
       {% if option.selected_value == value %}
         checked
       {% endif %}
-      {%- endunless -%}
       {% if option_disabled %}
         class="disabled"
       {% endif %}

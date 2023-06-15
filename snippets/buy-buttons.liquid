@@ -63,21 +63,13 @@
             {%- assign single_item = single_item | plus:1 -%}
           {%- endif -%}           
         {%- endfor -%}          
-        <div id="uniq-{{ section.id }}" class="bundle_cls Bundletesing">      
+        <div id="uniq-{{ section.id }}" class="bundle_cls">       
         {%- if black_medium_var == selected_var -%}
        {%- if single_item == 0 -%}
         <input type="hidden" name="items[1][quantity]" value="1">
         <input type="hidden" name="items[1][id]" value="45464433525046">
         {%- endif -%}  
         {%- endif -%}
-        </div>
-        {%- assign dataval = false -%}
-        <div id="unselected-{{ section.id }}">                       
-            {%- assign variant_title = product.selected_or_first_available_variant.title | handle -%}              
-            {%- if variant_title contains 'unselected' -%}
-              {%- assign dataval = true -%}
-            {%- endif -%}
-          <div class="unslected_var" data-value="{{ dataval }}"></div>  
         </div>
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
@@ -101,12 +93,12 @@
           {%- endfor -%}
           {%- if product.variants.size > 1 and size_variant == true -%}
             {%- assign diable_btn = true -%}
-          {%- endif -%}          
+          {%- endif -%}
           <button
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %} {% if dataval %}disable_cart{%endif}"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}

@@ -946,9 +946,9 @@ class VariantSelects extends HTMLElement {
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
     document.querySelector('.sizedropdown').classList.remove('active');
-    var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
-    console.log('Unselected Data value',unselected_dataval);
     setTimeout(function(e){
+      var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
+      console.log('Unselected Data value',unselected_dataval);
       if(unselected_dataval==true){
         document.querySelector('.product-form__submit').classList.add('disable_cart');
         console.log('add Disable Button');

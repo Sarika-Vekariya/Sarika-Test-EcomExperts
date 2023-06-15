@@ -946,17 +946,6 @@ class VariantSelects extends HTMLElement {
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
     document.querySelector('.sizedropdown').classList.remove('active');
-    setTimeout(function(e){
-      var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
-      console.log('Unselected Data value',unselected_dataval);
-      if(unselected_dataval==true){
-        document.querySelector('.product-form__submit').classList.add('disable_cart');
-        console.log('add Disable Button');
-      }else{
-        document.querySelector('.product-form__submit').classList.remove('disable_cart');
-        console.log('Remove Disable Button');
-      }
-    },1000);
   }
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);
@@ -1061,13 +1050,16 @@ class VariantSelects extends HTMLElement {
         if (unselected_pro && unselected_pro_prosource) unselected_pro.innerHTML = unselected_pro_prosource.innerHTML;
         var unselected_dataval = document.querySelector('.unslected_var').getAttribute('data-value');
         console.log('Unselected Data value',unselected_dataval);
-        if(unselected_dataval==true){
-          document.querySelector('.product-form__submit').classList.add('disable_cart');
-          console.log('add Disable Button');
-        }else{
-          document.querySelector('.product-form__submit').classList.remove('disable_cart');
-          console.log('Remove Disable Button');
-        }
+        setTimeout(function(e){
+          if(unselected_dataval==true){
+            document.querySelector('.product-form__submit').classList.add('disable_cart');
+            console.log('add Disable Button');
+          }else{
+            document.querySelector('.product-form__submit').classList.remove('disable_cart');
+            console.log('Remove Disable Button');
+          }
+        },1000);
+        
 
         if (source && destination) destination.innerHTML = source.innerHTML;
         if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;

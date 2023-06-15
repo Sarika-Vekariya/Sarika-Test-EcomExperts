@@ -947,11 +947,13 @@ class VariantSelects extends HTMLElement {
     }
     document.querySelector('.sizedropdown').classList.remove('active');
     var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
-    if(unselected_dataval==true){
-      document.querySelector('.product-form__submit').classList.add('disable_cart');
-    }else{
-      document.querySelector('.product-form__submit').classList.remove('disable_cart');
-    }
+    setTimeout(function(e){
+      if(unselected_dataval==true){
+        document.querySelector('.product-form__submit').classList.add('disable_cart');
+      }else{
+        document.querySelector('.product-form__submit').classList.remove('disable_cart');
+      }
+    },500);
   }
   updateShareUrl() {
     const shareButton = document.getElementById(`Share-${this.dataset.section}`);

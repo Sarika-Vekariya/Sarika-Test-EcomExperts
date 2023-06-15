@@ -946,6 +946,8 @@ class VariantSelects extends HTMLElement {
       document.querySelector('.size_lebel').innerHTML = checkval;
     }
     document.querySelector('.sizedropdown').classList.remove('active');
+    var unselected_dataval = document.querySelector('.unslected_var').dataset.val;
+    console.log(unselected_dataval);
   }
 
   updateShareUrl() {
@@ -1043,6 +1045,13 @@ class VariantSelects extends HTMLElement {
           `uniq-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
         if (bundle_pro && bundle_prosource) bundle_pro.innerHTML = bundle_prosource.innerHTML;
+
+        const unselected_pro = document.getElementById(`uniq-${this.dataset.section}`);
+        const unselected_pro_prosource = html.getElementById(
+          `uniq-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        if (unselected_pro && unselected_pro_prosource) unselected_pro.innerHTML = unselected_pro_prosource.innerHTML;
+
         if (source && destination) destination.innerHTML = source.innerHTML;
         if (inventorySource && inventoryDestination) inventoryDestination.innerHTML = inventorySource.innerHTML;
         if (skuSource && skuDestination) {

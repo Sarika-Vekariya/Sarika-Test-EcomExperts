@@ -72,7 +72,7 @@
         {%- endif -%}
         </div>
         {%- assign current_unselected = false -%}
-        <div id="unselected-{{ section.id }}">
+        <div id="unselected-{{ section.id }}" {{ handlevariant }}>
         {%- assign handlevariant = product.selected_or_first_available_variant.title -%}
         {%- if handlevariant contains 'unselected' -%}
           {%- assign current_unselected = true -%}
